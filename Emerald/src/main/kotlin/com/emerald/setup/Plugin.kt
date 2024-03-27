@@ -3,6 +3,7 @@ package com.emerald.setup
 import com.emerald.setup.extensions.Extension
 import com.emerald.setup.extensions.loadExtensions
 import com.emerald.setup.extensions.registerCommands
+import com.emerald.setup.permissions.PermissionStorage
 import kotlinx.coroutines.runBlocking
 import org.bukkit.plugin.java.JavaPlugin
 
@@ -11,11 +12,15 @@ class Plugin : JavaPlugin() {
         lateinit var instance: Plugin
     }
 
+    lateinit var storage: PermissionStorage
+        private set
+
     private val extensions = mutableSetOf<Extension>()
 
     override fun onEnable() {
         instance = this
 
+        storage = PermissionStorage()
         val extensionResults = runBlocking { loadExtensions() }
 
         for (result in extensionResults) {

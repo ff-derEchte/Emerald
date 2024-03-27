@@ -1,6 +1,9 @@
 package com.emerald.util
 
+import com.emerald.api.player.BukkitPlayer
 import com.emerald.setup.extensions.ExtensionClassLoader
+import org.bukkit.Material
+import org.bukkit.inventory.ItemStack
 import java.lang.reflect.Method
 
 internal inline fun<reified A: Annotation> getFunctionsWithAnnotation(classLoader: ExtensionClassLoader): Set<Pair<A, Method>> {
@@ -16,4 +19,7 @@ internal inline fun<reified A: Annotation> getFunctionsWithAnnotation(classLoade
     }
 
     return functions
+}
+
+fun foo(player: BukkitPlayer) {
 }

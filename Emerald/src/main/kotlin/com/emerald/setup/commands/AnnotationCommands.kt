@@ -10,6 +10,7 @@ import com.emerald.api.commands.CommandPatternMatchingException
 import com.emerald.api.commands.CommandResolver
 import com.emerald.api.commands.PatternType
 import com.emerald.api.commands.toDisplayString
+import com.emerald.api.player.PlayerWrapper
 import org.bukkit.Bukkit
 import java.lang.reflect.Method
 import kotlin.reflect.jvm.kotlinFunction
@@ -156,7 +157,7 @@ fun PatternType.match(string: String): Any? {
         is PatternType.Double -> string.toDoubleOrNull()
         is PatternType.Int -> string.toIntOrNull()
         is PatternType.String -> string
-        is PatternType.Player -> Bukkit.getPlayer(string)
+        is PatternType.Player -> Bukkit.getPlayer(string)?.let { PlayerWrapper(it) }
         is PatternType.Complex -> {
             conversionMethod.invoke(null, string)
         }
