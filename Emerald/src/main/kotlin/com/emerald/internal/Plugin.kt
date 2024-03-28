@@ -1,10 +1,10 @@
-package com.emerald.setup
+package com.emerald.internal
 
-import com.emerald.setup.extensions.Extension
-import com.emerald.setup.extensions.loadExtensions
-import com.emerald.setup.extensions.registerCommands
-import com.emerald.setup.permissions.PermissionStorage
-import com.emerald.setup.permissions.PermissionStorageImpl
+import com.emerald.internal.extensions.Extension
+import com.emerald.internal.extensions.loadExtensions
+import com.emerald.internal.extensions.registerCommands
+import com.emerald.internal.permissions.PermissionStorage
+import com.emerald.internal.permissions.PermissionStorageImpl
 import kotlinx.coroutines.runBlocking
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin

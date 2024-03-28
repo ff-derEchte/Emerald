@@ -1,7 +1,7 @@
 package com.emerald.api.config
 
-import com.emerald.setup.config.ConfigBuilderImpl
-import com.emerald.setup.config.VersionString
+import com.emerald.internal.config.ConfigBuilderImpl
+import com.emerald.internal.config.VersionString
 
 data class Config(
     val name: String,

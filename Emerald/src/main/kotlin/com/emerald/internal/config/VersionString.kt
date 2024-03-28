@@ -1,4 +1,4 @@
-package com.emerald.setup.config
+package com.emerald.internal.config
 
 @JvmInline
 value class VersionString(val string: String) {

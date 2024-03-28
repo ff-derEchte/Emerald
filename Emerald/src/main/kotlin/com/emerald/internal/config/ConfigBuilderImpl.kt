@@ -1,4 +1,4 @@
-package com.emerald.setup.config
+package com.emerald.internal.config
 
 import com.emerald.api.config.Config
 import com.emerald.api.config.ConfigBuilder

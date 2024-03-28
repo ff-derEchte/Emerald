@@ -5,7 +5,7 @@ import java.lang.reflect.Method
 
 
 interface CommandResolver {
-    fun resolve(name: String, player: CommandSender, args: Array<String>)
+    suspend fun resolve(name: String, player: CommandSender, args: Array<String>)
 
     val commands: Set<String>
 }

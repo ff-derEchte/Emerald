@@ -1,6 +1,6 @@
 package com.emerald.util
 
-import com.emerald.setup.Plugin
+import com.emerald.internal.Plugin
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.runBlocking
 import org.bukkit.Bukkit

@@ -1,6 +1,6 @@
 package com.emerald.api.player
 
-import com.emerald.setup.Plugin
+import com.emerald.internal.Plugin
 
 
 interface PermissibleEntity : Identifiable {
@@ -11,4 +11,6 @@ interface PermissibleEntity : Identifiable {
     fun removePermission(permission: String) {
         Plugin.instance.permissionStorage.removePermission(uuid, permission)
     }
+
+    fun hasPermission(permission: String): Boolean
 }

@@ -1,4 +1,4 @@
-package com.emerald.setup.extensions
+package com.emerald.internal.extensions
 
 import java.io.IOException
 import java.util.jar.JarEntry

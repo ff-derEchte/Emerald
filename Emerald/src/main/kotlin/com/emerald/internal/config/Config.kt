@@ -1,7 +1,7 @@
-package com.emerald.setup.config
+package com.emerald.internal.config
 
 import com.emerald.api.Config
-import com.emerald.setup.extensions.ExtensionClassLoader
+import com.emerald.internal.extensions.ExtensionClassLoader
 import com.emerald.util.getAnnotatedPropertiesWithType
 
 private typealias ConfigImpl = com.emerald.api.config.Config

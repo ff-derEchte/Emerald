@@ -1,7 +1,7 @@
-package com.emerald.setup.permissions
+package com.emerald.internal.permissions
 
-import com.emerald.api.player.BukkitPlayer
-import com.emerald.setup.Plugin
+import com.emerald.internal.Plugin
+import com.emerald.internal.player.BukkitPlayer
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.bukkit.Bukkit
