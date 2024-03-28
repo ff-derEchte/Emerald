@@ -1,6 +1,7 @@
 package com.emerald.api.text
 
 import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.TextComponent
 import net.kyori.adventure.text.format.Style
 
 
@@ -23,7 +24,17 @@ data class Text(
             Text(text, color, textStyle, this.child.appendChild(child))
         }
     }
+
+    companion object {
+        fun from(component: Component?): Text {
+            val text = (component as? TextComponent)?.content() ?: ""
+            val color = component?.style()?.color()?.let { Color.from(it) }
+            //
+            return Text(text, color)
+        }
+    }
 }
+
 
 fun text(text: String, color: Color? = null, ) = Text(text, color)
 
