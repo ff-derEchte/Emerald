@@ -18,6 +18,7 @@ that make plugin development easier
 
 Emerald is an API specifically tailored to make minecraft plugin development easier. The API is a standalone api that works 
 separate from any Spigot or Bukkit based APIs and therefore has a few benefits:
+> Disclaimer: For now this is not true because the current implementation just wraps spigot, but the goal is to created a nms based custom server that runs emerald 
 
 ### Benefits
 
