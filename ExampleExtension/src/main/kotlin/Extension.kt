@@ -7,7 +7,7 @@ import com.emerald.api.player.Player
 
 
 @Config
-fun extensionConfig() = config {
+val Config = config {
     name = "Example Extension"
     version = "1.0"
 }
@@ -39,7 +39,6 @@ fun kick(sender: CommandSender, player: Player, reason: String) {
 }
 
 @Command
-fun op(player: Player) {
-    player.addPermission("heal.self")
-    player.respond("Congrats you opd yourself")
+fun echo(sender: CommandSender, message: String) {
+    sender.respond(message)
 }

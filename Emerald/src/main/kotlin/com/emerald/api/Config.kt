@@ -1,5 +1,5 @@
 package com.emerald.api
 
-@Target(AnnotationTarget.FUNCTION)
+@Target(AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 annotation class Config()

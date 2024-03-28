@@ -1,9 +1,7 @@
 package com.emerald.util
 
-import com.emerald.api.player.BukkitPlayer
 import com.emerald.setup.extensions.ExtensionClassLoader
-import org.bukkit.Material
-import org.bukkit.inventory.ItemStack
+import java.lang.reflect.Field
 import java.lang.reflect.Method
 
 internal inline fun<reified A: Annotation> getFunctionsWithAnnotation(classLoader: ExtensionClassLoader): Set<Pair<A, Method>> {
@@ -21,5 +19,16 @@ internal inline fun<reified A: Annotation> getFunctionsWithAnnotation(classLoade
     return functions
 }
 
-fun foo(player: BukkitPlayer) {
+internal inline fun<reified A: Annotation, reified T> getAnnotatedPropertiesWithType(classLoader: ExtensionClassLoader): Set<Field> {
+    val fields = mutableSetOf<Field>()
+
+    val classes = classLoader.loadedClasses.values
+    for (clazz in classes) {
+        val memberFields = clazz.declaredFields.filter { field ->
+            field.annotations.any { it is A } && field.type == T::class.java
+        }
+        fields += memberFields
+    }
+
+    return fields
 }
